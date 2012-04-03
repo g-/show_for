@@ -20,6 +20,7 @@ module ShowFor
     end
 
     def attributes(*attribute_names)
+      attribute_names = @object.attribute_names if attribute_names.empty?
       attribute_names.map do |attribute_name|
         attribute(attribute_name)
       end.join.html_safe
